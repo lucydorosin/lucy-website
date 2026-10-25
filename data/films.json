@@ -1,0 +1,27 @@
+{
+  "heading": "Short films",
+  "intro": "Narrative shorts, most written, directed, and edited independently.",
+  "items": [
+    {
+      "title": "Half Light",
+      "meta": "Drama · 8 min",
+      "blurb": "Two estranged siblings spend one power outage rebuilding a bridge they thought was gone.",
+      "thumb_style": "thumb-1",
+      "video_embed_url": ""
+    },
+    {
+      "title": "Paper Boats",
+      "meta": "Drama · 12 min",
+      "blurb": "A father teaches his daughter to fold paper boats the summer before he moves out.",
+      "thumb_style": "thumb-2",
+      "video_embed_url": ""
+    },
+    {
+      "title": "The Last Ferry",
+      "meta": "Drama · 6 min",
+      "blurb": "Strangers on the final crossing of the night trade secrets they'll never have to keep.",
+      "thumb_style": "thumb-3",
+      "video_embed_url": ""
+    }
+  ]
+}

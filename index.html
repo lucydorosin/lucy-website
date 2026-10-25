@@ -1,0 +1,474 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lucy Dorosin — Writer &amp; Filmmaker</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#faf8f4;
+    --bg-alt:#f2efe8;
+    --ink:#1c1a17;
+    --ink-soft:#5c584f;
+    --line:#e2ddd2;
+    --accent:#a8452f;
+    --accent-soft:#c97a63;
+    --max:1080px;
+  }
+
+  *{box-sizing:border-box;margin:0;padding:0;}
+
+  html{scroll-behavior:smooth;}
+
+  body{
+    background:var(--bg);
+    color:var(--ink);
+    font-family:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
+    font-size:16px;
+    line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+  }
+
+  h1,h2,h3,.serif{
+    font-family:'Fraunces',Georgia,'Times New Roman',serif;
+    font-weight:500;
+    letter-spacing:-0.01em;
+  }
+
+  a{color:inherit;text-decoration:none;}
+
+  img{max-width:100%;display:block;}
+
+  .wrap{max-width:var(--max);margin:0 auto;padding:0 32px;}
+
+  /* Nav */
+  header{
+    position:sticky;top:0;z-index:50;
+    background:rgba(250,248,244,0.85);
+    backdrop-filter:blur(8px);
+    border-bottom:1px solid var(--line);
+  }
+  nav.wrap{
+    display:flex;align-items:center;justify-content:space-between;
+    height:76px;
+  }
+  .logo{font-family:'Fraunces',serif;font-size:22px;font-weight:600;letter-spacing:0.01em;}
+  .nav-links{display:flex;gap:36px;list-style:none;}
+  .nav-links a{
+    font-size:14px;letter-spacing:0.04em;text-transform:uppercase;
+    color:var(--ink-soft);
+    transition:color .2s ease;
+  }
+  .nav-links a:hover{color:var(--accent);}
+  .nav-toggle{display:none;background:none;border:none;cursor:pointer;padding:8px;}
+  .nav-toggle span{display:block;width:22px;height:2px;background:var(--ink);margin:5px 0;}
+
+  @media(max-width:720px){
+    .nav-links{
+      position:absolute;top:76px;left:0;right:0;
+      background:var(--bg);
+      flex-direction:column;
+      gap:0;
+      border-bottom:1px solid var(--line);
+      max-height:0;overflow:hidden;
+      transition:max-height .3s ease;
+    }
+    .nav-links.open{max-height:320px;}
+    .nav-links li{border-top:1px solid var(--line);}
+    .nav-links a{display:block;padding:18px 32px;}
+    .nav-toggle{display:block;}
+  }
+
+  section{padding:120px 0;}
+  section + section{border-top:1px solid var(--line);}
+
+  .eyebrow{
+    font-size:13px;letter-spacing:0.12em;text-transform:uppercase;
+    color:var(--accent);font-weight:500;margin-bottom:18px;
+  }
+
+  /* Hero */
+  #home{
+    padding-top:140px;padding-bottom:140px;
+    background:
+      radial-gradient(circle at 85% 20%, rgba(168,69,47,0.10), transparent 55%),
+      var(--bg);
+  }
+  .home-grid{
+    display:grid;
+    grid-template-columns:380px 1fr;
+    gap:64px;
+    align-items:start;
+    margin-top:32px;
+  }
+  .hero-photo{
+    border-radius:18px;
+    overflow:hidden;
+    box-shadow:0 30px 60px -30px rgba(28,26,23,0.35);
+  }
+
+  @media(min-width:861px){
+    .hero-photo{
+      position:sticky;
+      top:110px;
+    }
+  }
+  .hero-photo img{
+    width:100%;
+    aspect-ratio:2/3;
+    object-fit:cover;
+    display:block;
+  }
+  .home-text h2{font-size:clamp(28px,4vw,40px);margin-bottom:22px;}
+  .home-text p{margin-bottom:18px;color:var(--ink-soft);font-size:16px;max-width:520px;}
+  .home-text p:first-of-type{color:var(--ink);font-size:18px;font-family:'Fraunces',serif;}
+  .hero-actions{margin-top:36px;display:flex;gap:18px;flex-wrap:wrap;}
+
+  @media(max-width:860px){
+    .home-grid{grid-template-columns:1fr;}
+    .hero-photo{max-width:340px;}
+  }
+
+  .btn{
+    display:inline-block;
+    padding:14px 28px;
+    border-radius:999px;
+    font-size:14px;
+    letter-spacing:0.03em;
+    border:1px solid var(--ink);
+    transition:all .2s ease;
+  }
+  .btn-primary{background:var(--ink);color:var(--bg);}
+  .btn-primary:hover{background:var(--accent);border-color:var(--accent);}
+  .btn-ghost:hover{background:var(--ink);color:var(--bg);}
+
+  /* Section headers */
+  .section-head{
+    display:flex;justify-content:space-between;align-items:flex-end;
+    margin-bottom:64px;flex-wrap:wrap;gap:20px;
+  }
+  .section-head h2{font-size:clamp(30px,4vw,44px);}
+  .section-head p{color:var(--ink-soft);max-width:340px;font-size:15px;}
+
+  /* Writing */
+  .piece-list{display:flex;flex-direction:column;}
+  .piece{
+    display:grid;
+    grid-template-columns:100px 1fr auto;
+    gap:28px;
+    align-items:baseline;
+    padding:32px 0;
+    border-top:1px solid var(--line);
+    transition:padding-left .25s ease;
+  }
+  .piece:last-child{border-bottom:1px solid var(--line);}
+  .piece:hover{padding-left:12px;}
+  .piece-num{font-size:14px;color:var(--ink-soft);font-variant-numeric:tabular-nums;}
+  .piece-title{font-size:24px;font-family:'Fraunces',serif;}
+  .piece-tag{
+    font-size:12px;letter-spacing:0.06em;text-transform:uppercase;
+    color:var(--accent-soft);display:block;margin-top:6px;
+  }
+  .piece-blurb{color:var(--ink-soft);font-size:15px;margin-top:10px;max-width:520px;}
+  .piece-link{
+    font-size:13px;letter-spacing:0.04em;text-transform:uppercase;
+    white-space:nowrap;color:var(--ink-soft);
+    border-bottom:1px solid var(--ink-soft);
+    padding-bottom:2px;
+  }
+  .piece:hover .piece-link{color:var(--accent);border-color:var(--accent);}
+
+  @media(max-width:640px){
+    .piece{grid-template-columns:1fr;gap:8px;}
+    .piece-link{justify-self:start;}
+  }
+
+  /* Films */
+  #films{background:var(--bg-alt);}
+  .film-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+    gap:40px;
+  }
+  .film-card{
+    background:var(--bg);
+    border:1px solid var(--line);
+    border-radius:14px;
+    overflow:hidden;
+    transition:transform .25s ease, box-shadow .25s ease;
+  }
+  .film-card:hover{transform:translateY(-4px);box-shadow:0 18px 40px -20px rgba(28,26,23,0.25);}
+  .film-thumb{
+    aspect-ratio:16/10;
+    position:relative;
+    display:flex;align-items:center;justify-content:center;
+  }
+  .film-thumb::after{
+    content:"";position:absolute;inset:0;
+    background:rgba(0,0,0,0.08);
+  }
+  .film-thumb.has-video::after{display:none;}
+  .film-thumb iframe{width:100%;height:100%;border:0;position:relative;z-index:1;}
+  .thumb-1{background:linear-gradient(135deg,#6b7d6a,#2f3b30);}
+  .thumb-2{background:linear-gradient(135deg,#a8452f,#3d1f17);}
+  .thumb-3{background:linear-gradient(135deg,#5a6b8c,#1e2433);}
+  .play-icon{
+    position:relative;z-index:1;
+    width:56px;height:56px;border-radius:50%;
+    background:rgba(250,248,244,0.9);
+    display:flex;align-items:center;justify-content:center;
+  }
+  .play-icon::before{
+    content:"";
+    border-style:solid;
+    border-width:9px 0 9px 14px;
+    border-color:transparent transparent transparent var(--ink);
+    margin-left:3px;
+  }
+  .film-body{padding:24px 26px 28px;}
+  .film-meta{font-size:12px;letter-spacing:0.05em;text-transform:uppercase;color:var(--accent-soft);}
+  .film-body h3{font-size:20px;margin-top:8px;}
+  .film-body p{color:var(--ink-soft);font-size:14px;margin-top:10px;}
+
+  /* Home facts (formerly About) */
+  .about-facts{
+    display:flex;gap:40px;margin-top:8px;flex-wrap:wrap;
+  }
+  .about-facts div{border-top:1px solid var(--line);padding-top:12px;min-width:120px;}
+  .about-facts span{display:block;font-size:12px;text-transform:uppercase;letter-spacing:0.05em;color:var(--ink-soft);margin-bottom:6px;}
+
+  /* Contact */
+  #contact{background:var(--ink);color:var(--bg);}
+  #contact .eyebrow{color:var(--accent-soft);}
+  #contact h2{font-size:clamp(32px,5vw,52px);max-width:640px;}
+  #contact .lede{color:#c9c4b8;max-width:480px;margin-top:20px;font-size:17px;}
+  .contact-row{
+    margin-top:56px;
+    display:flex;justify-content:space-between;align-items:flex-end;
+    flex-wrap:wrap;gap:32px;
+    padding-top:36px;border-top:1px solid rgba(250,248,244,0.15);
+  }
+  .contact-email{font-family:'Fraunces',serif;font-size:clamp(24px,4vw,34px);}
+  .contact-email:hover{color:var(--accent-soft);}
+  .social-list{display:flex;gap:28px;list-style:none;}
+  .social-list a{font-size:14px;letter-spacing:0.03em;color:#c9c4b8;}
+  .social-list a:hover{color:var(--bg);}
+
+  footer{
+    background:var(--ink);color:#8a8579;
+    text-align:center;font-size:13px;padding:28px 0 40px;
+  }
+
+  .reveal{opacity:0;transform:translateY(24px);transition:opacity .7s ease, transform .7s ease;}
+  .reveal.in{opacity:1;transform:translateY(0);}
+
+  .load-note{padding:80px 32px;text-align:center;color:var(--ink-soft);}
+</style>
+</head>
+<body>
+
+<header>
+  <nav class="wrap">
+    <a href="#home" class="logo">Lucy Dorosin</a>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="#home">Home</a></li>
+      <li><a href="#writing">Writing</a></li>
+      <li><a href="#films">Films</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+    <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+</header>
+
+<main id="main">
+  <p class="load-note">Loading…</p>
+</main>
+
+<footer>
+  <div class="wrap">&copy; <span id="year"></span> Lucy Dorosin. All words and films her own.</div>
+</footer>
+
+<script>
+  // ---------- helpers ----------
+  function esc(str){
+    return String(str == null ? '' : str)
+      .replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
+  }
+  function pad(n){ return String(n).padStart(2,'0'); }
+  function paragraphs(text){
+    return String(text || '')
+      .split(/\n\s*\n/)
+      .map(function(p){ return '<p>' + esc(p.trim()).replace(/\n/g,'<br>') + '</p>'; })
+      .join('\n');
+  }
+
+  // ---------- section renderers ----------
+  function renderHome(d){
+    var factsHtml = (d.facts || []).map(function(f){
+      return '<div><span>' + esc(f.label) + '</span>' + esc(f.value) + '</div>';
+    }).join('\n');
+
+    return (
+      '<section id="home">' +
+        '<div class="wrap">' +
+          '<p class="eyebrow">' + esc(d.eyebrow) + '</p>' +
+          '<div class="home-grid">' +
+            '<div class="hero-photo">' +
+              '<img src="' + esc(d.photo) + '" alt="' + esc(d.photo_alt) + '">' +
+            '</div>' +
+            '<div class="home-text">' +
+              '<h2>' + esc(d.heading) + '</h2>' +
+              paragraphs(d.bio) +
+              '<div class="about-facts">' + factsHtml + '</div>' +
+              '<div class="hero-actions">' +
+                '<a href="#writing" class="btn btn-primary">Read the writing</a>' +
+                '<a href="#films" class="btn btn-ghost">Watch the films</a>' +
+              '</div>' +
+            '</div>' +
+          '</div>' +
+        '</div>' +
+      '</section>'
+    );
+  }
+
+  function renderWriting(d){
+    var pieces = (d.pieces || []).map(function(p, i){
+      var hasLink = !!(p.link && p.link.trim());
+      var attrs = hasLink
+        ? 'href="' + esc(p.link) + '" target="_blank" rel="noopener"'
+        : 'href="#"';
+      var linkLabel = p.link_label || (hasLink ? 'Read' : 'Details');
+      return (
+        '<a class="piece reveal" ' + attrs + '>' +
+          '<span class="piece-num">' + pad(i + 1) + '</span>' +
+          '<span>' +
+            '<span class="piece-title">' + esc(p.title) + '</span>' +
+            '<span class="piece-tag">' + esc(p.tag) + '</span>' +
+            '<span class="piece-blurb">' + esc(p.blurb) + '</span>' +
+          '</span>' +
+          '<span class="piece-link">' + esc(linkLabel) + ' →</span>' +
+        '</a>'
+      );
+    }).join('\n');
+
+    return (
+      '<section id="writing">' +
+        '<div class="wrap">' +
+          '<div class="section-head reveal">' +
+            '<div><p class="eyebrow">Writing</p><h2>' + esc(d.heading) + '</h2></div>' +
+            '<p>' + esc(d.intro) + '</p>' +
+          '</div>' +
+          '<div class="piece-list">' + pieces + '</div>' +
+        '</div>' +
+      '</section>'
+    );
+  }
+
+  function renderFilms(d){
+    var cards = (d.items || []).map(function(item){
+      var hasVideo = !!(item.video_embed_url && item.video_embed_url.trim());
+      var thumbInner = hasVideo
+        ? '<iframe src="' + esc(item.video_embed_url) + '" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>'
+        : '<span class="play-icon"></span>';
+      var thumbClass = 'film-thumb ' + esc(item.thumb_style || 'thumb-1') + (hasVideo ? ' has-video' : '');
+      return (
+        '<div class="film-card reveal">' +
+          '<div class="' + thumbClass + '">' + thumbInner + '</div>' +
+          '<div class="film-body">' +
+            '<span class="film-meta">' + esc(item.meta) + '</span>' +
+            '<h3>' + esc(item.title) + '</h3>' +
+            '<p>' + esc(item.blurb) + '</p>' +
+          '</div>' +
+        '</div>'
+      );
+    }).join('\n');
+
+    return (
+      '<section id="films">' +
+        '<div class="wrap">' +
+          '<div class="section-head reveal">' +
+            '<div><p class="eyebrow">Films</p><h2>' + esc(d.heading) + '</h2></div>' +
+            '<p>' + esc(d.intro) + '</p>' +
+          '</div>' +
+          '<div class="film-grid">' + cards + '</div>' +
+        '</div>' +
+      '</section>'
+    );
+  }
+
+  function renderContact(d){
+    var social = (d.social || []).map(function(s){
+      return '<li><a href="' + esc(s.href) + '" target="_blank" rel="noopener">' + esc(s.label) + '</a></li>';
+    }).join('\n');
+
+    return (
+      '<section id="contact">' +
+        '<div class="wrap">' +
+          '<p class="eyebrow">Get in touch</p>' +
+          '<h2 class="serif">' + esc(d.heading) + '</h2>' +
+          '<p class="lede">' + esc(d.lede) + '</p>' +
+          '<div class="contact-row">' +
+            '<a class="contact-email" href="mailto:' + esc(d.email) + '">' + esc(d.email) + '</a>' +
+            '<ul class="social-list">' + social + '</ul>' +
+          '</div>' +
+        '</div>' +
+      '</section>'
+    );
+  }
+
+  // ---------- load + render ----------
+  function loadJSON(path){
+    // cache-bust so a fresh CMS publish shows up without a hard refresh
+    return fetch(path + '?v=' + Date.now()).then(function(r){
+      if (!r.ok) throw new Error('Failed to load ' + path);
+      return r.json();
+    });
+  }
+
+  Promise.all([
+    loadJSON('data/home.json'),
+    loadJSON('data/writing.json'),
+    loadJSON('data/films.json'),
+    loadJSON('data/contact.json')
+  ]).then(function(results){
+    var home = results[0], writing = results[1], films = results[2], contact = results[3];
+    document.getElementById('main').innerHTML =
+      renderHome(home) + renderWriting(writing) + renderFilms(films) + renderContact(contact);
+    initInteractions();
+  }).catch(function(err){
+    document.getElementById('main').innerHTML =
+      '<p class="load-note">Something went wrong loading the page content. (' + esc(err.message) + ')</p>';
+    console.error(err);
+  });
+
+  function initInteractions(){
+    // mobile nav toggle
+    var navToggle = document.getElementById('navToggle');
+    var navLinks = document.getElementById('navLinks');
+    navToggle.addEventListener('click', function(){ navLinks.classList.toggle('open'); });
+    navLinks.querySelectorAll('a').forEach(function(a){
+      a.addEventListener('click', function(){ navLinks.classList.remove('open'); });
+    });
+
+    // scroll reveal
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(entry){
+        if (entry.isIntersecting) {
+          entry.target.classList.add('in');
+          io.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.15 });
+    document.querySelectorAll('.reveal').forEach(function(el){ io.observe(el); });
+  }
+
+  document.getElementById('year').textContent = new Date().getFullYear();
+</script>
+
+</body>
+</html>

@@ -1,0 +1,86 @@
+backend:
+  name: git-gateway
+  branch: main
+
+# Where uploaded photos/PDFs get stored, and the path used to reference them
+media_folder: "assets/uploads"
+public_folder: "/assets/uploads"
+
+# Show a "Published" vs "Draft" workflow — set to false for simple instant-publish
+publish_mode: simple
+
+collections:
+  - name: "pages"
+    label: "Site Content"
+    files:
+      - name: "home"
+        label: "Home Page"
+        file: "data/home.json"
+        fields:
+          - { label: "Eyebrow (small line above photo)", name: "eyebrow", widget: "string" }
+          - { label: "Photo", name: "photo", widget: "image" }
+          - { label: "Photo alt text (for accessibility)", name: "photo_alt", widget: "string" }
+          - { label: "Heading", name: "heading", widget: "string" }
+          - { label: "Bio (leave a blank line between paragraphs)", name: "bio", widget: "text" }
+          - label: "Facts row"
+            name: "facts"
+            widget: "list"
+            fields:
+              - { label: "Label", name: "label", widget: "string" }
+              - { label: "Value", name: "value", widget: "string" }
+
+      - name: "writing"
+        label: "Writing Section"
+        file: "data/writing.json"
+        fields:
+          - { label: "Section heading", name: "heading", widget: "string" }
+          - { label: "Section intro line", name: "intro", widget: "string" }
+          - label: "Pieces"
+            name: "pieces"
+            widget: "list"
+            summary: "{{title}}"
+            fields:
+              - { label: "Title", name: "title", widget: "string" }
+              - { label: "Tag (format / length / credit)", name: "tag", widget: "string" }
+              - { label: "Blurb", name: "blurb", widget: "text" }
+              - { label: "Script file (PDF)", name: "link", widget: "file", required: false, hint: "Leave blank for stage work with no readable file, like a play." }
+              - { label: "Link button text", name: "link_label", widget: "string", required: false, hint: "Defaults to \"Read\" if a file is attached, \"Details\" if not." }
+
+      - name: "films"
+        label: "Films Section"
+        file: "data/films.json"
+        fields:
+          - { label: "Section heading", name: "heading", widget: "string" }
+          - { label: "Section intro line", name: "intro", widget: "string" }
+          - label: "Films"
+            name: "items"
+            widget: "list"
+            summary: "{{title}}"
+            fields:
+              - { label: "Title", name: "title", widget: "string" }
+              - { label: "Meta (genre · runtime)", name: "meta", widget: "string" }
+              - { label: "Blurb", name: "blurb", widget: "text" }
+              - label: "Placeholder color"
+                name: "thumb_style"
+                widget: "select"
+                options: ["thumb-1", "thumb-2", "thumb-3"]
+                hint: "Only used until a video is added below."
+              - label: "Video embed URL"
+                name: "video_embed_url"
+                widget: "string"
+                required: false
+                hint: "Paste a Vimeo or YouTube EMBED url once the film is hosted, e.g. https://player.vimeo.com/video/123456789 — this replaces the placeholder thumbnail with the real video."
+
+      - name: "contact"
+        label: "Contact Section"
+        file: "data/contact.json"
+        fields:
+          - { label: "Heading", name: "heading", widget: "string" }
+          - { label: "Lede line", name: "lede", widget: "string" }
+          - { label: "Email", name: "email", widget: "string" }
+          - label: "Social links"
+            name: "social"
+            widget: "list"
+            fields:
+              - { label: "Label", name: "label", widget: "string" }
+              - { label: "URL", name: "href", widget: "string" }

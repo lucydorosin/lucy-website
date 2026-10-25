@@ -1,0 +1,48 @@
+{
+  "heading": "Screenwriting & stage work",
+  "intro": "A running collection of scripts, stage work, and pieces in development.",
+  "pieces": [
+    {
+      "title": "Terms of Admission",
+      "tag": "Short film script · 8 pages",
+      "blurb": "At his family's status-conscious holiday party, a college-aged son fields a gauntlet of judgment about his choice to skip college — and finds the charm he's performing all night curdling into something sharper.",
+      "link": "assets/writing/terms-of-admission.pdf",
+      "link_label": "Read"
+    },
+    {
+      "title": "Opening Night",
+      "tag": "Short film script · 5 pages",
+      "blurb": "A shy freshman is offered a shot at the main cast on opening night of the spring musical — and has to decide whether the friendship she'd be leaving behind is worth it.",
+      "link": "assets/writing/opening-night.pdf",
+      "link_label": "Read"
+    },
+    {
+      "title": "Red Herring",
+      "tag": "Short film script · 5 pages",
+      "blurb": "A college sophomore wakes up covered in blood with no memory of the night before, and spirals into a panicked confession spree before learning the awful truth was just a fraternity prank.",
+      "link": "assets/writing/red-herring.pdf",
+      "link_label": "Read"
+    },
+    {
+      "title": "Motherlover",
+      "tag": "Short film script · 2 pages · co-written with Alara McPhee",
+      "blurb": "A Parents' Weekend reunion turns mortifying when a friend reveals exactly who he's been secretly courting.",
+      "link": "assets/writing/motherlover.pdf",
+      "link_label": "Read"
+    },
+    {
+      "title": "Between Love and Walls",
+      "tag": "Short film script · 4 pages",
+      "blurb": "Told across three ages of the same two people — 7, 14, and 18 — a friendship that almost became something more finally runs out of promises to keep.",
+      "link": "assets/writing/between-love-and-walls.pdf",
+      "link_label": "Read"
+    },
+    {
+      "title": "Interlude",
+      "tag": "Short film script · 4 pages · rough draft",
+      "blurb": "Told through a one-sided voicemail and looping memories, two former lovers relive the arc of a relationship that's already over.",
+      "link": "assets/writing/interlude.pdf",
+      "link_label": "Read"
+    }
+  ]
+}

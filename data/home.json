@@ -1,0 +1,12 @@
+{
+  "eyebrow": "Writer & Filmmaker",
+  "photo": "assets/hero.jpg",
+  "photo_alt": "Lucy Dorosin on set, reviewing notes beside a camera during a film shoot",
+  "heading": "Hi, I'm Lucy Dorosin",
+  "bio": "I am an emerging filmmaker and media creator based in Los Angeles and a graduate of the Ghetto Film School and Northwestern University's Film & Video Cherub program.\n\nIn addition to writing, directing and producing numerous short films, I am the writer and director of Good Company, a one-act play performed by the SCTG theater group based in Silverlake.\n\nMy work is committed to influencing culture positively and using visual metaphor to tell stories that seek to both examine the human heart and foster empathy.\n\nCreating filmic content has taken me through every stage of bringing stories to life—from screenwriting and casting through blocking, shooting, and post-production. Along the way, I have developed a strong foundation in screenwriting, directing, production, and digital content creation, while gaining a deeper understanding of what makes a story sing.\n\nDriven by a passion for compelling personal storytelling that is unafraid to challenge conventions and confront uncomfortable truths, I use film to explore the space between who we are and who we want to be. The personal is political, and my work explores how even people with the best intentions can hurt those around them. But with work and grace, we also have the capacity for goodness and change.",
+  "facts": [
+    { "label": "Based in", "value": "Los Angeles, California" },
+    { "label": "Focus", "value": "Screenwriting" },
+    { "label": "Currently", "value": "Staging Good Company with SCTG" }
+  ]
+}
