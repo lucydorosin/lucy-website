@@ -267,6 +267,8 @@
 
   .load-note{padding:80px 32px;text-align:center;color:var(--ink-soft);}
 </style>
+  <!-- Netlify Identity: handles editor invite / password-reset links -->
+  <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
 </head>
 <body>
 
@@ -470,5 +472,16 @@
   document.getElementById('year').textContent = new Date().getFullYear();
 </script>
 
+<script>
+  if (window.netlifyIdentity) {
+    window.netlifyIdentity.on("init", function (user) {
+      if (!user) {
+        window.netlifyIdentity.on("login", function () {
+          document.location.href = "/admin/";
+        });
+      }
+    });
+  }
+</script>
 </body>
 </html>
