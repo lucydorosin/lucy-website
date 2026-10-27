@@ -1,8 +1,11 @@
 {
-  "heading": "Have a project, a publication, or just want to say hello?",
+  "heading": "Interested in collaborating or just want to reach out?",
   "lede": "I'm always glad to hear from readers, collaborators, and fellow filmmakers.",
-  "email": "hello@lucydorosin.com",
+  "email": "lucydorosin@gmail.com",
   "social": [
-    { "label": "Instagram", "href": "https://www.instagram.com/lucydorosin/" }
+    {
+      "label": "Instagram",
+      "href": "https://www.instagram.com/lucydorosin/"
+    }
   ]
 }
